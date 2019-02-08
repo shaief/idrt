@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 
 #from handle_data import insert_data_to_elasticsearch
-from parse_pdf import extract_text
+from parse_pdf import extract_and_save
 
 search_date = '01/01/2018'
 
@@ -75,8 +75,8 @@ def crawler(search_date):
                             'filename': f,
                             'url': 'bbbbb.aaaa.com',
                         }
-                        text = extract_text(os.path.join(folder, f))
-                        # insert_data_to_elasticsearch(meta, text)
+                        output_file =f.replace('pdf', 'txt')
+                        extract_and_save(os.path.join(folder, f), os.path.join(folder, output_file))
 
 
 def crawl(session, r, soup, search_date, country, dayan):

@@ -2,8 +2,7 @@ from parse_pdf import extract_text
 
 from scrape_mishmoret import crawler
 
-files = crawler('01/01/2018')
 
-for input in files:
-    output = input.replace('pdf', 'txt')
-    extract_text(input, output)
+date_to_scrape = '01/01/2018'
+
+crawler(date_to_scrape)

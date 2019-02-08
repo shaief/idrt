@@ -26,7 +26,12 @@ def extract_text(input_file):
 def save_text_to_file(text, output_file):
     with open(output_file, 'w') as f:
         f.write(text)
+        print(output_file, ' saved!')
 
+
+def extract_and_save(input_file, output_file):
+    text = extract_text(input_file)
+    save_text_to_file(text, output_file)
 
 
 
